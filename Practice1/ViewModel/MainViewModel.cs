@@ -14,13 +14,14 @@ public partial class MainViewModel : ObservableObject
     }
 
     [ObservableProperty]
-    ObservableCollection<string> items;
+    ObservableCollection<string> _items;
 
     [ObservableProperty]
     ObservableCollection<string> deletedItems;
 
     [ObservableProperty]
     string text;
+
 
     [RelayCommand]
 

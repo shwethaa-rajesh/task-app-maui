@@ -15,7 +15,7 @@ public partial class MainPage : ContentPage
 
 	private void onCheckDeleteClicked(System.Object sender, System.EventArgs e)
 	{
-		Navigation.PushAsync(new DeletedItems(new DeletedTasksViewModel(), instance.DeletedItems.ToArray<string>()));
+		Navigation.PushAsync(new DeletedItems(new DeletedTasksViewModel(), instance.Items, instance.DeletedItems));
 	}
 
     

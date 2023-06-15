@@ -8,14 +8,21 @@
     <VerticalStackLayout>
 
         <Label Text="Deleted Tasks" HorizontalOptions="Center" Margin="0,20" FontSize="Title"></Label>
-        <CollectionView ItemsSource="{Binding DeletedItems}">
+        
+<Button Text="Restore Items" Command="{Binding RestoreAllTasksCommand}"  WidthRequest="200"  Margin="0,40"></Button>
+        <CollectionView ItemsSource="{Binding ItemsDeleted}">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="{x:Type x:String }">
 
                     <SwipeView>
                         <SwipeView.LeftItems>
-                            <SwipeItem Text="Restore" BackgroundColor="Green"></SwipeItem>
+                            <SwipeItems>
+                            <SwipeItem Text="Restore" BackgroundColor="Green"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:DeletedTasksViewModel}}, Path=RestoreTaskCommand}"
+                                       CommandParameter="{Binding .}"
+                                       ></SwipeItem>
 
+                           </SwipeItems>
                         </SwipeView.LeftItems>
                         <Frame>
                             <Label Text="{Binding .}" VerticalOptions="Center" ></Label>
@@ -28,6 +35,7 @@
             </CollectionView.ItemTemplate>
 
         </CollectionView>
-        <Button Text="Check all deleted items" WidthRequest="200" Margin="10"></Button>
+        
+
     </VerticalStackLayout>
 </ContentPage>

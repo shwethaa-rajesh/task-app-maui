@@ -47,7 +47,7 @@
 
             </CollectionView.ItemTemplate>
         </CollectionView>
-<Button Text="Check deleted" Grid.Row="2" Clicked="onCheckDeleteClicked"></Button>
+<Button Text="Deleted Items" Grid.Row="2" Grid.ColumnSpan="2" WidthRequest="200" Clicked="onCheckDeleteClicked" Margin="0,40"></Button>
     </Grid>
 
 </ContentPage>
