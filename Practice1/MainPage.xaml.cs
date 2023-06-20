@@ -4,7 +4,6 @@ namespace Practice1;
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
 	MainViewModel instance;
 	public MainPage(MainViewModel vm)
 	{

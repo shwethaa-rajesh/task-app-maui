@@ -59,9 +59,11 @@
 	<ItemGroup>
 	  <None Remove="ViewModel\" />
 	  <None Remove="Resources\Images\delete.png" />
+	  <None Remove="Models\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="ViewModel\" />
+	  <Folder Include="Models\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <BundleResource Include="Resources\Images\delete.png" />
