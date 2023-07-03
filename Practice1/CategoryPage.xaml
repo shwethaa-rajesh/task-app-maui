@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:Practice1.Models"
+             xmlns:viewmodel="clr-namespace:Practice1.ViewModel"
+             x:DataType="viewmodel:CategoryPageVM"
+             x:Class="Practice1.CategoryPage"
+             Title="CategoryPage">
+    <ScrollView>
+    <VerticalStackLayout Padding="0,20">
+        <Label 
+            Text="Trending Services "
+            Margin="20,0,20,20"
+            FontAttributes="Bold"
+            FontSize="18"
+            VerticalOptions="Start" 
+            HorizontalOptions="Start" />
+        <CollectionView ItemsSource="{Binding TrendingServices}" Margin="20,0,20,20"  >
+               <CollectionView.ItemsLayout >
+       <GridItemsLayout Orientation="Vertical"
+                        HorizontalItemSpacing="24"
+                        VerticalItemSpacing="20"
+                        Span="4" />
+                </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                
+                <DataTemplate x:DataType="{x:Type models:ServiceModel}" >
+                    <VerticalStackLayout>
+                        <Image WidthRequest="60" Source="{Binding ImageUrl}"></Image>
+                        <Label Text="{Binding TaskName }" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="12" HorizontalOptions="Center" ></Label>
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Line Stroke="#EAEAEA" X2="{Binding Width, Source={RelativeSource Self}}" HorizontalOptions="Fill" StrokeThickness="10" />
+        <Label 
+            Text="Services By MiCasa"
+            Margin="20"
+            FontAttributes="Bold"
+            FontSize="18"
+            VerticalOptions="Start" 
+            HorizontalOptions="Start" />
+        <CollectionView ItemsSource="{Binding ProvidedServices}"  Margin="20,0,20,20"  >
+               <CollectionView.ItemsLayout>
+       <GridItemsLayout Orientation="Vertical"
+                        HorizontalItemSpacing="24"
+                        VerticalItemSpacing="20"
+                        Span="4" />
+                </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                
+                <DataTemplate x:DataType="{x:Type models:ServiceModel}" >
+                    <VerticalStackLayout>
+                        <Image WidthRequest="60" Source="{Binding ImageUrl}"></Image>
+                        <Label Text="{Binding TaskName }" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="12"  HorizontalOptions="Center" ></Label>
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        
+        <Line Stroke="#EAEAEA" X2="{Binding Width, Source={RelativeSource Self}}" HorizontalOptions="Fill" StrokeThickness="10" />
+    </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

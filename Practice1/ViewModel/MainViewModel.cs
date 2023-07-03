@@ -33,7 +33,7 @@ public partial class MainViewModel : ObservableObject
 
     [RelayCommand]
 
-    async void AddTask()
+    void AddTask()
     {
         System.Diagnostics.Debug.WriteLine("abc");
         string url = $"{baseUrl}/tasks";
@@ -47,15 +47,14 @@ public partial class MainViewModel : ObservableObject
         };
         string json = JsonSerializer.Serialize<TaskModel>(taskNew, _serializerOptions);
         StringContent content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
-        var postResponse = await client.PostAsync(url, content);
+        //var postResponse = await client.PostAsync(url, content);
 
-        System.Diagnostics.Debug.WriteLine(postResponse);
-        string getUrl = $"{baseUrl}/tasks";
+        //System.Diagnostics.Debug.WriteLine(postResponse);
+        //string getUrl = $"{baseUrl}/tasks";
 
-        var response = await client.GetStringAsync(getUrl);
+        //var response = await client.GetStringAsync(getUrl);
 
 
-        System.Diagnostics.Debug.WriteLine(response);
         if (string.IsNullOrWhiteSpace(Text))
         {
             return;
